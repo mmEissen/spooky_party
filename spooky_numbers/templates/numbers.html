@@ -1,0 +1,85 @@
+<html>
+  <head>
+    <title>Waiting Room</title>
+    <meta http-equiv="refresh" content="{{ refresh_after }}" >
+    <style>
+body {
+    background-color: rgb(199, 199, 199);
+    margin: 0;
+}
+
+.card {
+  /* Add shadows to create the "card" effect */
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+  width: 45%;
+  box-sizing: border-box;
+  margin: 1em;
+  float: left;
+  background-color: white;
+}
+
+.header {
+  /* Add shadows to create the "card" effect */
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+  width: 100%;
+  box-sizing: border-box;
+  padding: 1em 3em;
+  background-color: white;
+}
+
+/* Add some padding inside the card container */
+.card-container {
+  padding: 2px 16px;
+}
+
+.number-title {
+  padding-left: 10px;
+  background-color: deepskyblue;
+}
+
+.container {
+    width: 100%;
+    overflow: hidden;
+}
+
+.vertical-center {
+  margin: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 80%;
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+}
+
+    </style>
+  </head>
+  <body>
+    <div class="header">
+      <h1>Hell Waiting Room</h1><br>
+      <b>§1.1</b> Please remain seated at all times until your number is shown on this board, or standing while it is not.<br>
+      <b>§1.2</b> Under no circumstances disregard any instructions that are not given to you by personnel unless otherwise instructed by. <br>
+      <b>§2.1</b> Do disregard instructions that are (or are not), pretended to have received the number thereof. <br>
+      <b>§2.2.4</b> Throughout the remaining time of the non-temporal time shift the clock on this board must not be
+      regarded in a non-timely manner or fashion of the manner or fashion as defined in the manner of 
+      fashion of §2.2.3 (in sofar as in accordance with §2.1). <br>
+      <b>§2.3</b> The numbers are to be read from left to right and top to bottom with regard. <br>
+      to the bottom edge of the top of this screen, the right edge of the left of this screen, the left edge
+      of the right of this screen, and the top edge of the bottom of this screen.
+      <b>§2.12</b> For any questions or concerns please fill out form F32.4, F32.5, F32.6, or (if applicable) F55.2.1 <br><br><br><br><br><br>
+
+    </div>
+    <div class="container">
+        {% for number, location in numbers %}
+        <div class="card">
+          <div class="card-container">
+              <div class="number-title">
+                  <h1><b>{{ number }}</b></h1>
+              </div>
+              <p>Please go to: <h2>{{ location }}</h2></p>
+          </div>
+        </div>
+        {% endfor %}
+      </div>
+  </body>
+</html>

@@ -1,0 +1,39 @@
+<html>
+  <head>
+    <title>Waiting Room</title>
+  </head>
+  <body>
+    <h1>Add a Number</h1>
+    {% if can_add %}
+    <form action="/number" method="post">
+        <label>Person</label><br>
+        <select name="person_id" id="person_id">
+          {% for person_id, person_name, person_number in persons %}
+              <option value="{{person_id}}">{{person_name}} ({{person_number}})</option>
+          {% endfor %}
+        </select><br>
+        <label>Location</label><br>
+        <select name="location" id="location">
+          {% for location in locations %}
+            <option value="{{location}}">{{location}}</option>
+          {% endfor %}
+        </select><br><br>
+        <input type="submit" value="Add to Screen">
+    </form>
+    {% else %}
+    Remove a number before adding a new one!
+    {% endif %}
+
+    <h1>Current Numbers</h1>
+
+    {% for number in current_numbers %}
+    <p>
+        <form action="/delete_number" method="post">
+            <label>Number: {{ number[1] }} Location: {{ number[2] }} </label>
+            <input type="hidden" name="number_id" value="{{ number[0] }}">
+            <input type="submit" value="DELETE">
+        </form>
+    </p>
+    {% endfor %}
+  </body>
+</html>

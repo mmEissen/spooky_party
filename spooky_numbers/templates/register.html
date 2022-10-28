@@ -1,0 +1,61 @@
+<html>
+  <head>
+    <title>Registration Form</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+      body {
+        margin: 5em;
+      }
+      h1 {
+        text-align: center;
+        font-size: 3em;
+      }
+      input {
+        font-size: 2em;
+      }
+      label {
+        font-size: 2em;
+      }
+      td {
+        text-align: right;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Form F177.5 B, Waiting Room Registration</h1>
+    <form action="/print" method="post">
+        <table>
+          <tr>
+            <td>
+              <label>Name: </label>
+            </td>
+            <td>
+              <input type="text" name="name" id="name">
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <label>Pronouns: </label>
+            </td>
+            <td>
+              <input type="text" name="pronouns" id="pronouns">
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <label>Spirit Animal: </label>
+            </td>
+            <td>
+              <input type="text" name="spirit_animal" id="spirit_animal"><br>
+            </td>
+          </tr>
+          <tr>
+            <td>
+            </td>
+            <td>
+              <input type="submit" value="Register">
+            </td>
+          </tr>
+        </table>
+    </form>
+</html>
